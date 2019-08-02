@@ -1,14 +1,15 @@
-# FortiGate Autoscale with AWS Transit Gateway Integration
+# FortiGate Autoscale
+A collection of **Node.js** modules and cloud-specific templates which support autoscale functionality for groups of FortiGate-VM instances on various cloud platforms.
+
+This project contains the code and templates for the **Amazon AWS** and **Microsoft Azure** autoscale deployments. For autoscale on **AliCloud** see the [alicloud-autoscale](https://github.com/fortinet/alicloud-autoscale/) repository.
 
 A collection of **Node.js** modules and cloud-specific templates which support autoscale functionality for groups of FortiGate-VM instances on various cloud platforms.
 
-This project is branched from the [fortigate-autoscale](https://github.com/fortinet/fortigate-autoscale/) project for the purpose of AWS Transit Gateway integration. It uses the core and AWS related modules.
+ * [fortigate-autoscale/core](core) contains the core logic and provides an interface which can be extended to deal with the differences in cloud platform APIs.
+ * [fortigate-autoscale/azure](azure) contains an implementation for the **Microsoft Azure** platform API and **Cosmos DB** storage backend.
+ * [fortigate-autoscale/aws](aws) contains an implementation for the **AWS SDK** platform API with a **Dynamo DB** storage backend.
 
-This project contains the code and templates for the deployment for the **AWS SDK** platform API with a **Dynamo DB** storage backend.
-
-It also contains a deployment script which can generate deployment packages used by AWS CloudFormation.
-
-For autoscale on Azure and on AWS without Transit Gateway integration, see the main [fortigate-autoscale](https://github.com/fortinet/fortigate-autoscale/) repository. For autoscale on AliCloud see the [alicloud-autoscale](https://github.com/fortinet/alicloud-autoscale/) repository.
+The project also contains a deployment script which can generate packages for each cloud service's *serverless* implementation.
 
 ## Supported Platforms
 This project supports autoscale for the cloud platforms listed below. The version tag in parentheses refers to the autoscale module version included in this project.
